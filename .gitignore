@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Environments
+.env
+.venv
+venv/
+*.conda
+conda-env/
+
+# Checkpoints and run artifacts
+work_dirs/
+wandb/
+runs/
+exp/
+
+# Loose log files at repo root (structured logs/ dirs are intentionally tracked)
+/*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+
+# Vision / non-benchmark code in Stage2-FWE
+Stage2-FWE/opentome/tome/
+Stage2-FWE/opentome/timm/
+Stage2-FWE/trainer/classification/
+Stage2-FWE/evaluations/image_classification/
+Stage2-FWE/evaluations/visualizations/
+Stage2-FWE/demo/
+

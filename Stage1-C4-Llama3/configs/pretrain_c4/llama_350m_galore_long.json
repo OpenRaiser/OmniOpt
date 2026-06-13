@@ -1,0 +1,15 @@
+{
+  "nproc_per_node": 8,
+  "model_config": "configs/llama_350m.json",
+  "max_length": 1024,
+  "weight_decay": 0,
+  "eval_every": 1000,
+  "save_every": 60000,
+  "batch_size": 64,
+  "total_batch_size": 512,
+  "warmup_steps": 6000,
+  "num_training_steps": 60000,
+  "galore_scale": 0.25,
+  "rank": 256,
+  "update_proj_gap": 200
+}
