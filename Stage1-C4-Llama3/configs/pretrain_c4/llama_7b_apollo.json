@@ -1,0 +1,15 @@
+{
+  "nproc_per_node": 8,
+  "model_config": "configs/llama_7b.json",
+  "eval_every": 1000,
+  "save_every": 50000,
+  "batch_size": 16,
+  "total_batch_size": 512,
+  "warmup_steps": 15000,
+  "num_training_steps": 150000,
+  "apollo_scale": 1,
+  "rank": 256,
+  "scale_type": "channel",
+  "proj": "random",
+  "update_proj_gap": 200
+}
