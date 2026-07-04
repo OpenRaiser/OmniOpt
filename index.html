@@ -1346,282 +1346,282 @@
           </table>
         </div>
         <div class="table-block">
-          <table class="data-table responsive-matrix dense-table" data-tex-label="tab:opt_coverage">
-            <caption>Taxonomy and four-axis coverage of the 24 benchmarked optimizers. For each optimizer we list its
-              subclass, its four-axis coordinates (Axes I--IV of Section 3.2), and the meta-pipeline stage(s) with a
-              non-identity operation. Axis III is shown through its two equivalent readings, the LMO constraint geometry
-              and the preconditioner, which are two faces of the same direction operator &Phi;<sub>t</sub>. State
-              estimation (Axis II) absorbs momentum, the second-moment / Hessian proxy H<sub>t</sub>, variance
-              reduction (FO/VR/STORM), and any state
-              compression, while the update domain (Axis I) records the space in which the update lives.
-              ``full&#x27;&#x27; denotes the original coordinate space.</caption>
+          <table class="data-table responsive-matrix dense-table" data-tex-label="tab:four-axis-instantiation">
+            <caption>Optimizer instantiations under the four-axis decomposition (Axes I&ndash;IV of Section 3.2),
+              spanning all five families (T1&ndash;T5). Axis III shows two faces of the same direction operator
+              &Phi;<sub>t</sub>: the LMO constraint ball and the preconditioner H<sub>t</sub>. &#8477;<sup>d</sup> means
+              all parameters are flattened into d independent scalar coordinates and updated element-wise, while
+              &#8477;<sup>m&times;n</sup> means the update operates on a whole weight matrix and couples its entries.
+              P<sub>t</sub> denotes a low-rank projection onto the current subspace (learned for GaLore/Fira, random
+              for APOLLO, column-orthogonal for Conda) with back-projection P<sub>t</sub><sup>&#8868;</sup>; a bar
+              (e.g. v&#772;<sub>t</sub>) marks a quantity formed inside P<sub>t</sub>. VR marks a variance-reduced
+              (MARS) estimate, and matrix routing means only matrix parameters receive the matrix update while
+              vector-like parameters follow an AdamW-style branch.</caption>
             <thead>
               <tr>
                 <th scope="col">Optimizer</th>
-                <th scope="col">Sub.</th>
-                <th scope="col">Axis I domain</th>
-                <th scope="col">Axis II state</th>
-                <th scope="col">Axis III LMO</th>
-                <th scope="col">Axis III precond.</th>
-                <th scope="col">Axis IV finalize</th>
-                <th scope="col">Pipeline stages</th>
+                <th scope="col">Axis I: Domain</th>
+                <th scope="col">Axis II: State estimator</th>
+                <th scope="col">Axis III (LMO)</th>
+                <th scope="col">Axis III (Precondition)</th>
+                <th scope="col">Axis IV: Finalization</th>
               </tr>
             </thead>
             <tbody>
               <tr class="group-row fam-t1">
-                <th scope="rowgroup" colspan="8">T1: Element-wise adaptive moment and scalar control</th>
+                <th scope="rowgroup" colspan="6">T1: Element-wise adaptive moment and scalar control</th>
               </tr>
               <tr>
-                <th scope="row" data-label="Optimizer">AdamW</th>
-                <td data-label="Sub.">T1.1</td>
-                <td data-label="Axis I domain">full</td>
-                <td data-label="Axis II state">m<sub>t</sub>,v<sub>t</sub></td>
-                <td data-label="Axis III LMO">adapt. &#8467;<sub>&#8734;</sub> box</td>
-                <td data-label="Axis III precond.">diag(v<sub>t</sub>), &frac12;</td>
-                <td data-label="Axis IV finalize">LR + dec. WD</td>
-                <td data-label="Pipeline stages">S3/S5</td>
+                <th scope="row" data-label="Optimizer">SGDM</th>
+                <td data-label="Axis I: Domain">&#8477;<sup>d</sup></td>
+                <td data-label="Axis II: State estimator">m<sub>t</sub></td>
+                <td data-label="Axis III (LMO)">&#8467;<sub>2</sub> ball</td>
+                <td data-label="Axis III (Precondition)">H<sub>t</sub>=I</td>
+                <td data-label="Axis IV: Finalization">LR</td>
               </tr>
               <tr>
-                <th scope="row" data-label="Optimizer">RAdam</th>
-                <td data-label="Sub.">T1.1</td>
-                <td data-label="Axis I domain">full</td>
-                <td data-label="Axis II state">m<sub>t</sub>,v<sub>t</sub> rect.</td>
-                <td data-label="Axis III LMO">adapt. &#8467;<sub>&#8734;</sub> box</td>
-                <td data-label="Axis III precond.">diag(v<sub>t</sub>), &frac12;</td>
-                <td data-label="Axis IV finalize">rect. warmup + WD</td>
-                <td data-label="Pipeline stages">S3/S5</td>
+                <th scope="row" data-label="Optimizer">Adam, AdamW</th>
+                <td data-label="Axis I: Domain">&#8477;<sup>d</sup></td>
+                <td data-label="Axis II: State estimator">m<sub>t</sub>,v<sub>t</sub></td>
+                <td data-label="Axis III (LMO)">adaptive &#8467;<sub>&#8734;</sub></td>
+                <td data-label="Axis III (Precondition)">H<sub>t</sub>=diag(v<sub>t</sub>)</td>
+                <td data-label="Axis IV: Finalization">LR + decoupled WD</td>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">NAdam</th>
-                <td data-label="Sub.">T1.1</td>
-                <td data-label="Axis I domain">full</td>
-                <td data-label="Axis II state">Nesterov m<sub>t</sub>,v<sub>t</sub></td>
-                <td data-label="Axis III LMO">adapt. &#8467;<sub>&#8734;</sub> box</td>
-                <td data-label="Axis III precond.">diag(v<sub>t</sub>), &frac12;</td>
-                <td data-label="Axis IV finalize">lookahead + WD</td>
-                <td data-label="Pipeline stages">S3/S5</td>
+                <td data-label="Axis I: Domain">&#8477;<sup>d</sup></td>
+                <td data-label="Axis II: State estimator">Nesterov m<sub>t</sub>, v<sub>t</sub></td>
+                <td data-label="Axis III (LMO)">adaptive &#8467;<sub>&#8734;</sub></td>
+                <td data-label="Axis III (Precondition)">H<sub>t</sub>=diag(v<sub>t</sub>)</td>
+                <td data-label="Axis IV: Finalization">Nesterov + LR + WD</td>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">AdaBelief</th>
-                <td data-label="Sub.">T1.1</td>
-                <td data-label="Axis I domain">full</td>
-                <td data-label="Axis II state">m<sub>t</sub>, belief s<sub>t</sub></td>
-                <td data-label="Axis III LMO">adapt. &#8467;<sub>&#8734;</sub> box</td>
-                <td data-label="Axis III precond.">diag(s<sub>t</sub>), &frac12;</td>
-                <td data-label="Axis IV finalize">LR + WD</td>
-                <td data-label="Pipeline stages">S3/S5</td>
+                <td data-label="Axis I: Domain">&#8477;<sup>d</sup></td>
+                <td data-label="Axis II: State estimator">m<sub>t</sub>,s<sub>t</sub></td>
+                <td data-label="Axis III (LMO)">adaptive &#8467;<sub>&#8734;</sub></td>
+                <td data-label="Axis III (Precondition)">H<sub>t</sub>=diag(s<sub>t</sub>)</td>
+                <td data-label="Axis IV: Finalization">LR + WD</td>
+              </tr>
+              <tr>
+                <th scope="row" data-label="Optimizer">ADOPT</th>
+                <td data-label="Axis I: Domain">&#8477;<sup>d</sup></td>
+                <td data-label="Axis II: State estimator">ordered, delayed m<sub>t</sub>,v<sub>t</sub></td>
+                <td data-label="Axis III (LMO)">adaptive &#8467;<sub>&#8734;</sub></td>
+                <td data-label="Axis III (Precondition)">H<sub>t</sub>=diag(v<sub>t</sub>)</td>
+                <td data-label="Axis IV: Finalization">LR + WD</td>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">Adan</th>
-                <td data-label="Sub.">T1.1</td>
-                <td data-label="Axis I domain">full</td>
-                <td data-label="Axis II state">m<sub>t</sub>,v<sub>t</sub> grad-diff (VR)</td>
-                <td data-label="Axis III LMO">adapt. &#8467;<sub>&#8734;</sub> box</td>
-                <td data-label="Axis III precond.">diag(v<sub>t</sub>), &frac12;</td>
-                <td data-label="Axis IV finalize">LR + WD</td>
-                <td data-label="Pipeline stages">S3/S5</td>
+                <td data-label="Axis I: Domain">&#8477;<sup>d</sup></td>
+                <td data-label="Axis II: State estimator">m<sub>t</sub> + grad-diff state</td>
+                <td data-label="Axis III (LMO)">adaptive &#8467;<sub>&#8734;</sub></td>
+                <td data-label="Axis III (Precondition)">H<sub>t</sub>=diag(v<sub>t</sub>)</td>
+                <td data-label="Axis IV: Finalization">LR + WD</td>
+              </tr>
+              <tr>
+                <th scope="row" data-label="Optimizer">AdEMAMix</th>
+                <td data-label="Axis I: Domain">&#8477;<sup>d</sup></td>
+                <td data-label="Axis II: State estimator">short/long EMA</td>
+                <td data-label="Axis III (LMO)">adaptive &#8467;<sub>&#8734;</sub></td>
+                <td data-label="Axis III (Precondition)">H<sub>t</sub>=diag(v<sub>t</sub>)</td>
+                <td data-label="Axis IV: Finalization">LR + WD</td>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">MARS-AdamW</th>
-                <td data-label="Sub.">T1.2</td>
-                <td data-label="Axis I domain">full</td>
-                <td data-label="Axis II state">c<sub>t</sub>,m<sub>t</sub>,v<sub>t</sub> (STORM)</td>
-                <td data-label="Axis III LMO">adapt. &#8467;<sub>&#8734;</sub> box</td>
-                <td data-label="Axis III precond.">diag(v<sub>t</sub>), &frac12;</td>
-                <td data-label="Axis IV finalize">LR + dec. WD</td>
-                <td data-label="Pipeline stages">S0/S3</td>
+                <td data-label="Axis I: Domain">&#8477;<sup>d</sup></td>
+                <td data-label="Axis II: State estimator">c<sub>t</sub>,m<sub>t</sub>,v<sub>t</sub></td>
+                <td data-label="Axis III (LMO)">adaptive &#8467;<sub>&#8734;</sub> (VR)</td>
+                <td data-label="Axis III (Precondition)">H<sub>t</sub>=diag(v<sub>t</sub>), v<sub>t</sub>=EMA(c<sub>t</sub><sup>2</sup>)</td>
+                <td data-label="Axis IV: Finalization">LR + decoupled WD</td>
+              </tr>
+              <tr>
+                <th scope="row" data-label="Optimizer">RAdam</th>
+                <td data-label="Axis I: Domain">&#8477;<sup>d</sup></td>
+                <td data-label="Axis II: State estimator">rectified m<sub>t</sub>,v<sub>t</sub></td>
+                <td data-label="Axis III (LMO)">adaptive &#8467;<sub>&#8734;</sub></td>
+                <td data-label="Axis III (Precondition)">H<sub>t</sub>=diag(v<sub>t</sub>)</td>
+                <td data-label="Axis IV: Finalization">LR + WD</td>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">Prodigy</th>
-                <td data-label="Sub.">T1.3</td>
-                <td data-label="Axis I domain">full</td>
-                <td data-label="Axis II state">m<sub>t</sub>,v<sub>t</sub>,d<sub>t</sub></td>
-                <td data-label="Axis III LMO">adapt. &#8467;<sub>&#8734;</sub> box</td>
-                <td data-label="Axis III precond.">diag(v<sub>t</sub>), &frac12;</td>
-                <td data-label="Axis IV finalize">auto-LR + WD</td>
-                <td data-label="Pipeline stages">S3/S5</td>
+                <td data-label="Axis I: Domain">&#8477;<sup>d</sup></td>
+                <td data-label="Axis II: State estimator">m<sub>t</sub>,v<sub>t</sub> + LR est. d<sub>t</sub></td>
+                <td data-label="Axis III (LMO)">adaptive &#8467;<sub>&#8734;</sub></td>
+                <td data-label="Axis III (Precondition)">H<sub>t</sub>=diag(v<sub>t</sub>)</td>
+                <td data-label="Axis IV: Finalization">automatic LR + WD</td>
               </tr>
               <tr class="group-row fam-t2">
-                <th scope="rowgroup" colspan="8">T2: Matrix-level structural methods</th>
+                <th scope="rowgroup" colspan="6">T2: Matrix-level structural methods</th>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">Muon</th>
-                <td data-label="Sub.">T2.1</td>
-                <td data-label="Axis I domain">original matrix</td>
-                <td data-label="Axis II state">M<sub>t</sub>, H<sub>t</sub>=M<sub>t</sub>M<sub>t</sub><sup>&#8868;</sup></td>
-                <td data-label="Axis III LMO">spectral polar UV<sup>&#8868;</sup></td>
-                <td data-label="Axis III precond.">H<sub>t</sub>, &frac12;</td>
-                <td data-label="Axis IV finalize">LR + matrix routing</td>
-                <td data-label="Pipeline stages">S1/S2</td>
-              </tr>
-              <tr>
-                <th scope="row" data-label="Optimizer">RMNP</th>
-                <td data-label="Sub.">T2.1</td>
-                <td data-label="Axis I domain">matrix (row-wise)</td>
-                <td data-label="Axis II state">M<sub>t</sub>, H<sub>t</sub>=diag(M<sub>t</sub>M<sub>t</sub><sup>&#8868;</sup>)</td>
-                <td data-label="Axis III LMO">row normalization</td>
-                <td data-label="Axis III precond.">H<sub>t</sub>, &frac12;</td>
-                <td data-label="Axis IV finalize">LR + matrix routing</td>
-                <td data-label="Pipeline stages">S1/S2</td>
-              </tr>
-              <tr>
-                <th scope="row" data-label="Optimizer">Shampoo</th>
-                <td data-label="Sub.">T2.2</td>
-                <td data-label="Axis I domain">Kron (Q<sub>L</sub>,Q<sub>R</sub>)</td>
-                <td data-label="Axis II state">m<sub>t</sub>, Kron L<sub>t</sub>,R<sub>t</sub></td>
-                <td data-label="Axis III LMO">metric-ball steepest</td>
-                <td data-label="Axis III precond.">Kron-Fisher, &frac14;</td>
-                <td data-label="Axis IV finalize">LR + damping</td>
-                <td data-label="Pipeline stages">S1/S2/S3/S4</td>
-              </tr>
-              <tr>
-                <th scope="row" data-label="Optimizer">SOAP</th>
-                <td data-label="Sub.">T2.2</td>
-                <td data-label="Axis I domain">Kron eigen (Q<sub>L</sub>,Q<sub>R</sub>)</td>
-                <td data-label="Axis II state">m<sub>t</sub>,v<sub>t</sub>, Kron</td>
-                <td data-label="Axis III LMO">box in eigenbasis</td>
-                <td data-label="Axis III precond.">rotated diag, &frac12;</td>
-                <td data-label="Axis IV finalize">LR + WD</td>
-                <td data-label="Pipeline stages">S1/S2/S3/S4</td>
+                <td data-label="Axis I: Domain">&#8477;<sup>m&times;n</sup></td>
+                <td data-label="Axis II: State estimator">M<sub>t</sub></td>
+                <td data-label="Axis III (LMO)">spectral (polar)</td>
+                <td data-label="Axis III (Precondition)">H<sub>t</sub>=M<sub>t</sub>M<sub>t</sub><sup>&#8868;</sup></td>
+                <td data-label="Axis IV: Finalization">LR + matrix routing</td>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">MARS-Shampoo</th>
-                <td data-label="Sub.">T2.2</td>
-                <td data-label="Axis I domain">Kron (Q<sub>L</sub>,Q<sub>R</sub>)</td>
-                <td data-label="Axis II state">c<sub>t</sub>,m<sub>t</sub>, Kron (STORM)</td>
-                <td data-label="Axis III LMO">metric-ball (VR)</td>
-                <td data-label="Axis III precond.">rotated diag, &frac12;</td>
-                <td data-label="Axis IV finalize">LR + damping</td>
-                <td data-label="Pipeline stages">S0/S1/S2/S3/S4</td>
+                <td data-label="Axis I: Domain">&#8477;<sup>m&times;n</sup> (L<sub>t</sub>,R<sub>t</sub>)</td>
+                <td data-label="Axis II: State estimator">c<sub>t</sub>,m<sub>t</sub>,L<sub>t</sub>,R<sub>t</sub></td>
+                <td data-label="Axis III (LMO)">metric ball (VR)</td>
+                <td data-label="Axis III (Precondition)">H<sub>t</sub>=L<sub>t</sub><sup>1/4</sup>&otimes;R<sub>t</sub><sup>1/4</sup></td>
+                <td data-label="Axis IV: Finalization">LR + damping</td>
+              </tr>
+              <tr>
+                <th scope="row" data-label="Optimizer">Shampoo</th>
+                <td data-label="Axis I: Domain">&#8477;<sup>m&times;n</sup> (L<sub>t</sub>,R<sub>t</sub>)</td>
+                <td data-label="Axis II: State estimator">m<sub>t</sub>,L<sub>t</sub>,R<sub>t</sub></td>
+                <td data-label="Axis III (LMO)">metric ball</td>
+                <td data-label="Axis III (Precondition)">H<sub>t</sub>=L<sub>t</sub><sup>1/4</sup>&otimes;R<sub>t</sub><sup>1/4</sup></td>
+                <td data-label="Axis IV: Finalization">LR + damping</td>
+              </tr>
+              <tr>
+                <th scope="row" data-label="Optimizer">SOAP</th>
+                <td data-label="Axis I: Domain">Q<sub>L</sub>,Q<sub>R</sub></td>
+                <td data-label="Axis II: State estimator">m<sub>t</sub>,v<sub>t</sub>,Q<sub>L</sub>,Q<sub>R</sub></td>
+                <td data-label="Axis III (LMO)">adaptive &#8467;<sub>&#8734;</sub> in Q<sub>L</sub>,Q<sub>R</sub></td>
+                <td data-label="Axis III (Precondition)">diag(v<sub>t</sub>) in Q<sub>L</sub>,Q<sub>R</sub></td>
+                <td data-label="Axis IV: Finalization">LR + WD</td>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">GaLore</th>
-                <td data-label="Sub.">T2.3</td>
-                <td data-label="Axis I domain">subspace (Q<sub>L</sub>,Q<sub>R</sub>)</td>
-                <td data-label="Axis II state">m&#772;<sub>t</sub>, v&#772;<sub>t</sub> (proj.)</td>
-                <td data-label="Axis III LMO">projected adapt. box</td>
-                <td data-label="Axis III precond.">diag(v&#772;<sub>t</sub>), &frac12;</td>
-                <td data-label="Axis IV finalize">proj-back + WD</td>
-                <td data-label="Pipeline stages">S2/S3/S4</td>
+                <td data-label="Axis I: Domain">P<sub>t</sub></td>
+                <td data-label="Axis II: State estimator">m&#772;<sub>t</sub>,v&#772;<sub>t</sub> on P<sub>t</sub>g<sub>t</sub></td>
+                <td data-label="Axis III (LMO)">projected &#8467;<sub>&#8734;</sub></td>
+                <td data-label="Axis III (Precondition)">H&#772;<sub>t</sub>=diag(v&#772;<sub>t</sub>)</td>
+                <td data-label="Axis IV: Finalization">P<sub>t</sub><sup>&#8868;</sup> back + LR + WD</td>
+              </tr>
+              <tr>
+                <th scope="row" data-label="Optimizer">Fira</th>
+                <td data-label="Axis I: Domain">P<sub>t</sub> (+res)</td>
+                <td data-label="Axis II: State estimator">m&#772;<sub>t</sub>,v&#772;<sub>t</sub> + residual</td>
+                <td data-label="Axis III (LMO)">projected &#8467;<sub>&#8734;</sub> (+res)</td>
+                <td data-label="Axis III (Precondition)">H&#772;<sub>t</sub>=diag(v&#772;<sub>t</sub>)</td>
+                <td data-label="Axis IV: Finalization">P<sub>t</sub><sup>&#8868;</sup> back + res + LR</td>
+              </tr>
+              <tr>
+                <th scope="row" data-label="Optimizer">RMNP</th>
+                <td data-label="Axis I: Domain">&#8477;<sup>m&times;n</sup> (row)</td>
+                <td data-label="Axis II: State estimator">M<sub>t</sub></td>
+                <td data-label="Axis III (LMO)">row-normalized</td>
+                <td data-label="Axis III (Precondition)">H<sub>t</sub>=diag(M<sub>t</sub>M<sub>t</sub><sup>&#8868;</sup>)</td>
+                <td data-label="Axis IV: Finalization">LR + matrix routing</td>
               </tr>
               <tr class="group-row fam-t3">
-                <th scope="rowgroup" colspan="8">T3: Discretization and directional quantization</th>
+                <th scope="rowgroup" colspan="6">T3: Discretization and directional quantization</th>
+              </tr>
+              <tr>
+                <th scope="row" data-label="Optimizer">SignSGD</th>
+                <td data-label="Axis I: Domain">&#8477;<sup>d</sup></td>
+                <td data-label="Axis II: State estimator">g<sub>t</sub></td>
+                <td data-label="Axis III (LMO)">fixed &#8467;<sub>&#8734;</sub></td>
+                <td data-label="Axis III (Precondition)">H<sub>t</sub>=diag(|g<sub>t</sub>|)</td>
+                <td data-label="Axis IV: Finalization">LR</td>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">Lion</th>
-                <td data-label="Sub.">T3</td>
-                <td data-label="Axis I domain">full</td>
-                <td data-label="Axis II state">sign-mom. EMAs</td>
-                <td data-label="Axis III LMO">fixed &#8467;<sub>&#8734;</sub> box</td>
-                <td data-label="Axis III precond.">sign self-norm (I,0)</td>
-                <td data-label="Axis IV finalize">LR + WD</td>
-                <td data-label="Pipeline stages">S2/S3</td>
+                <td data-label="Axis I: Domain">&#8477;<sup>d</sup></td>
+                <td data-label="Axis II: State estimator">m<sub>t</sub></td>
+                <td data-label="Axis III (LMO)">fixed &#8467;<sub>&#8734;</sub></td>
+                <td data-label="Axis III (Precondition)">H<sub>t</sub>=diag(|m<sub>t</sub>|)</td>
+                <td data-label="Axis IV: Finalization">LR + WD</td>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">MARS-Lion</th>
-                <td data-label="Sub.">T3</td>
-                <td data-label="Axis I domain">full</td>
-                <td data-label="Axis II state">c<sub>t</sub>, sign-mom (STORM)</td>
-                <td data-label="Axis III LMO">fixed &#8467;<sub>&#8734;</sub> box (VR)</td>
-                <td data-label="Axis III precond.">sign self-norm (I,0)</td>
-                <td data-label="Axis IV finalize">LR + WD</td>
-                <td data-label="Pipeline stages">S0/S2/S3</td>
+                <td data-label="Axis I: Domain">&#8477;<sup>d</sup></td>
+                <td data-label="Axis II: State estimator">c<sub>t</sub>,m<sub>t</sub></td>
+                <td data-label="Axis III (LMO)">fixed &#8467;<sub>&#8734;</sub> (VR)</td>
+                <td data-label="Axis III (Precondition)">H<sub>t</sub>=diag(|m<sub>t</sub>|)</td>
+                <td data-label="Axis IV: Finalization">LR + WD</td>
               </tr>
               <tr class="group-row fam-t4">
-                <th scope="rowgroup" colspan="8">T4: State compression and structural aggregation</th>
+                <th scope="rowgroup" colspan="6">T4: State compression and structural aggregation</th>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">AdaFactor</th>
-                <td data-label="Sub.">T4.1</td>
-                <td data-label="Axis I domain">full, factored</td>
-                <td data-label="Axis II state">row/col 2nd-mom factors</td>
-                <td data-label="Axis III LMO">adapt. coord box</td>
-                <td data-label="Axis III precond.">factored diag, &frac12;</td>
-                <td data-label="Axis IV finalize">LR + factored upd.</td>
-                <td data-label="Pipeline stages">S3</td>
+                <td data-label="Axis I: Domain">&#8477;<sup>d</sup> (factored)</td>
+                <td data-label="Axis II: State estimator">row/col v<sub>t</sub> factors</td>
+                <td data-label="Axis III (LMO)">adaptive &#8467;<sub>&#8734;</sub></td>
+                <td data-label="Axis III (Precondition)">factored diag(v<sub>t</sub>)</td>
+                <td data-label="Axis IV: Finalization">LR + factored update</td>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">CAME</th>
-                <td data-label="Sub.">T4.1</td>
-                <td data-label="Axis I domain">full, factored</td>
-                <td data-label="Axis II state">factors + confidence</td>
-                <td data-label="Axis III LMO">adapt. coord box</td>
-                <td data-label="Axis III precond.">factored diag + conf.</td>
-                <td data-label="Axis IV finalize">LR + conf. corr.</td>
-                <td data-label="Pipeline stages">S3</td>
-              </tr>
-              <tr>
-                <th scope="row" data-label="Optimizer">8-bit Adam</th>
-                <td data-label="Sub.">T4.2</td>
-                <td data-label="Axis I domain">full, INT8 state</td>
-                <td data-label="Axis II state">quant. m<sub>t</sub>,v<sub>t</sub></td>
-                <td data-label="Axis III LMO">adapt. &#8467;<sub>&#8734;</sub> box</td>
-                <td data-label="Axis III precond.">diag(v<sub>t</sub>) INT8, &frac12;</td>
-                <td data-label="Axis IV finalize">dequant + WD</td>
-                <td data-label="Pipeline stages">S3</td>
+                <td data-label="Axis I: Domain">&#8477;<sup>d</sup> (factored)</td>
+                <td data-label="Axis II: State estimator">factors + confidence</td>
+                <td data-label="Axis III (LMO)">adaptive &#8467;<sub>&#8734;</sub></td>
+                <td data-label="Axis III (Precondition)">factored diag(v<sub>t</sub>) (+conf.)</td>
+                <td data-label="Axis IV: Finalization">LR + factored update</td>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">Adam-mini</th>
-                <td data-label="Sub.">T4.3</td>
-                <td data-label="Axis I domain">block-struct.</td>
-                <td data-label="Axis II state">block-shared m<sub>t</sub>,v<sub>t</sub></td>
-                <td data-label="Axis III LMO">block adapt. box</td>
-                <td data-label="Axis III precond.">block-mean diag, &frac12;</td>
-                <td data-label="Axis IV finalize">LR + WD</td>
-                <td data-label="Pipeline stages">S1/S3</td>
+                <td data-label="Axis I: Domain">&#8477;<sup>d</sup> (block)</td>
+                <td data-label="Axis II: State estimator">m<sub>t</sub>,v<sub>t</sub> (block)</td>
+                <td data-label="Axis III (LMO)">block &#8467;<sub>&#8734;</sub></td>
+                <td data-label="Axis III (Precondition)">block-mean diag(v<sub>t</sub>)</td>
+                <td data-label="Axis IV: Finalization">LR + WD</td>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">APOLLO</th>
-                <td data-label="Sub.">T4.3</td>
-                <td data-label="Axis I domain">full</td>
-                <td data-label="Axis II state">projected estimator</td>
-                <td data-label="Axis III LMO">adapt. coord box</td>
-                <td data-label="Axis III precond.">proj. diag, &frac12;</td>
-                <td data-label="Axis IV finalize">LR</td>
-                <td data-label="Pipeline stages">S1/S3</td>
+                <td data-label="Axis I: Domain">P<sub>t</sub> (rand.)</td>
+                <td data-label="Axis II: State estimator">m&#772;<sub>t</sub>,v&#772;<sub>t</sub></td>
+                <td data-label="Axis III (LMO)">projected &#8467;<sub>&#8734;</sub></td>
+                <td data-label="Axis III (Precondition)">H&#772;<sub>t</sub>=diag(v&#772;<sub>t</sub>)</td>
+                <td data-label="Axis IV: Finalization">P<sub>t</sub><sup>&#8868;</sup> back + LR</td>
+              </tr>
+              <tr>
+                <th scope="row" data-label="Optimizer">8-bit Adam</th>
+                <td data-label="Axis I: Domain">&#8477;<sup>d</sup> (INT8)</td>
+                <td data-label="Axis II: State estimator">m<sub>t</sub>,v<sub>t</sub> (INT8)</td>
+                <td data-label="Axis III (LMO)">adaptive &#8467;<sub>&#8734;</sub></td>
+                <td data-label="Axis III (Precondition)">H<sub>t</sub>=diag(v<sub>t</sub>) in INT8</td>
+                <td data-label="Axis IV: Finalization">dequant + LR + WD</td>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">Conda</th>
-                <td data-label="Sub.">T4.3</td>
-                <td data-label="Axis I domain">block-struct.</td>
-                <td data-label="Axis II state">block-shared m<sub>t</sub>,v<sub>t</sub></td>
-                <td data-label="Axis III LMO">block adapt. box</td>
-                <td data-label="Axis III precond.">block-mean diag, &frac12;</td>
-                <td data-label="Axis IV finalize">LR + WD</td>
-                <td data-label="Pipeline stages">S1/S3</td>
+                <td data-label="Axis I: Domain">P<sub>t</sub> (col)</td>
+                <td data-label="Axis II: State estimator">v<sub>t</sub> (col)</td>
+                <td data-label="Axis III (LMO)">projected &#8467;<sub>&#8734;</sub></td>
+                <td data-label="Axis III (Precondition)">col-wise diag(v<sub>t</sub>)</td>
+                <td data-label="Axis IV: Finalization">P<sub>t</sub><sup>&#8868;</sup> back + LR + WD</td>
               </tr>
               <tr class="group-row fam-t5">
-                <th scope="rowgroup" colspan="8">T5: Curvature-aware and geometric regularization</th>
+                <th scope="rowgroup" colspan="6">T5: Curvature-aware and geometric regularization</th>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">Sophia</th>
-                <td data-label="Sub.">T5.2</td>
-                <td data-label="Axis I domain">full</td>
-                <td data-label="Axis II state">m<sub>t</sub>, Hutch. HVP</td>
-                <td data-label="Axis III LMO">clipped local geom.</td>
-                <td data-label="Axis III precond.">Hutchinson, 1</td>
-                <td data-label="Axis IV finalize">LR + WD</td>
-                <td data-label="Pipeline stages">S3/S5</td>
+                <td data-label="Axis I: Domain">&#8477;<sup>d</sup></td>
+                <td data-label="Axis II: State estimator">m<sub>t</sub>,h<sub>t</sub></td>
+                <td data-label="Axis III (LMO)">clipped local</td>
+                <td data-label="Axis III (Precondition)">H<sub>t</sub>=h<sub>t</sub></td>
+                <td data-label="Axis IV: Finalization">LR + WD</td>
+              </tr>
+              <tr>
+                <th scope="row" data-label="Optimizer">AdaHessian</th>
+                <td data-label="Axis I: Domain">&#8477;<sup>d</sup></td>
+                <td data-label="Axis II: State estimator">m<sub>t</sub>,h<sub>t</sub> (Hutch.)</td>
+                <td data-label="Axis III (LMO)">metric ball</td>
+                <td data-label="Axis III (Precondition)">H<sub>t</sub>=h<sub>t</sub></td>
+                <td data-label="Axis IV: Finalization">LR + WD</td>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">AdamP</th>
-                <td data-label="Sub.">T5.3</td>
-                <td data-label="Axis I domain">full</td>
-                <td data-label="Axis II state">m<sub>t</sub>,v<sub>t</sub></td>
-                <td data-label="Axis III LMO">adapt. &#8467;<sub>&#8734;</sub> box</td>
-                <td data-label="Axis III precond.">diag(v<sub>t</sub>), &frac12;</td>
-                <td data-label="Axis IV finalize">radial proj. + WD</td>
-                <td data-label="Pipeline stages">S5</td>
+                <td data-label="Axis I: Domain">&#8477;<sup>d</sup></td>
+                <td data-label="Axis II: State estimator">m<sub>t</sub>,v<sub>t</sub></td>
+                <td data-label="Axis III (LMO)">adaptive &#8467;<sub>&#8734;</sub></td>
+                <td data-label="Axis III (Precondition)">H<sub>t</sub>=diag(v<sub>t</sub>)</td>
+                <td data-label="Axis IV: Finalization">radial projection + LR + WD</td>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">LAMB</th>
-                <td data-label="Sub.">T5.4</td>
-                <td data-label="Axis I domain">full</td>
-                <td data-label="Axis II state">m<sub>t</sub>,v<sub>t</sub></td>
-                <td data-label="Axis III LMO">adapt. &#8467;<sub>&#8734;</sub> box</td>
-                <td data-label="Axis III precond.">diag(v<sub>t</sub>), &frac12;</td>
-                <td data-label="Axis IV finalize">trust-ratio + WD</td>
-                <td data-label="Pipeline stages">S1/S5</td>
+                <td data-label="Axis I: Domain">&#8477;<sup>d</sup></td>
+                <td data-label="Axis II: State estimator">m<sub>t</sub>,v<sub>t</sub></td>
+                <td data-label="Axis III (LMO)">adaptive &#8467;<sub>&#8734;</sub></td>
+                <td data-label="Axis III (Precondition)">H<sub>t</sub>=diag(v<sub>t</sub>)</td>
+                <td data-label="Axis IV: Finalization">trust ratio + LR + WD</td>
               </tr>
             </tbody>
           </table>
