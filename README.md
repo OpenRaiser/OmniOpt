@@ -1,4 +1,4 @@
-# Scaling for Scaling: A Benchmark of Optimizers for LLM Pre-training
+# OmniOpt: A Benchmark of Optimizers for LLM Pre-training
 
 A systematic two-stage benchmark comparing optimizers for LLM pre-training at scale.
 
@@ -13,7 +13,7 @@ A strict controlled-variable protocol is used: only optimizer hyperparameters (`
 ## Repository Structure
 
 ```
-scaling-for-scaling/
+OmniOpt/
 ├── Stage1-C4-Llama3/
 │   ├── torchrun_main.py     # main training entry point
 │   ├── opt/                 # 24+ optimizer implementations
