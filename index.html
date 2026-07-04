@@ -4,26 +4,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Scaling for Scaling: Taxonomy, Geometry, and Benchmarking of Modern Optimizers</title>
+  <title>OmniOpt: Taxonomy, Geometry, and Benchmarking of Modern Optimizers</title>
   <meta name="description"
     content="A taxonomy, geometric framework, and cross-domain benchmark for modern optimizers across language-model scales, architectures, memory, cost, stability, and generalization." />
   <link rel="canonical" href="https://openraiser.github.io/scaling-for-scaling/" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="Scaling for Scaling: Taxonomy, Geometry, and Benchmarking of Modern Optimizers" />
+  <meta property="og:title" content="OmniOpt: Taxonomy, Geometry, and Benchmarking of Modern Optimizers" />
   <meta property="og:description"
     content="A taxonomy, geometric framework, and cross-domain benchmark for modern optimizers across language-model scales, architectures, memory, cost, stability, and generalization." />
   <meta property="og:image"
-    content="https://openraiser.github.io/scaling-for-scaling/images/tr_optimizer/logos/teaser.png" />
+    content="https://openraiser.github.io/scaling-for-scaling/images/tr_optimizer/figures/fig2-timeline.png" />
   <meta property="og:url" content="https://openraiser.github.io/scaling-for-scaling/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Scaling for Scaling: Taxonomy, Geometry, and Benchmarking of Modern Optimizers" />
+  <meta name="twitter:title" content="OmniOpt: Taxonomy, Geometry, and Benchmarking of Modern Optimizers" />
   <meta name="twitter:description"
     content="A taxonomy, geometric framework, and cross-domain benchmark for modern optimizers across language-model scales, architectures, memory, cost, stability, and generalization." />
   <meta name="twitter:image"
-    content="https://openraiser.github.io/scaling-for-scaling/images/tr_optimizer/logos/teaser.png" />
+    content="https://openraiser.github.io/scaling-for-scaling/images/tr_optimizer/figures/fig2-timeline.png" />
   <link rel="icon" type="image/png" href="images/tr_optimizer/logos/web-logo.png" />
   <script
-    type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "name": "Scaling for Scaling: Taxonomy, Geometry, and Benchmarking of Modern Optimizers", "headline": "Scaling for Scaling: Taxonomy, Geometry, and Benchmarking of Modern Optimizers", "description": "A taxonomy, geometric framework, and cross-domain benchmark for modern optimizers across language-model scales, architectures, memory, cost, stability, and generalization.", "author": [{"@type": "Person", "name": "Siyuan Li"}, {"@type": "Person", "name": "Jiabao Pan"}, {"@type": "Person", "name": "Yumou Liu"}, {"@type": "Person", "name": "Zhuoli Ouyang"}, {"@type": "Person", "name": "Xin Jin"}, {"@type": "Person", "name": "Xinglong Xu"}, {"@type": "Person", "name": "Jingxuan Wei"}, {"@type": "Person", "name": "Shengye Pang"}, {"@type": "Person", "name": "Jintao Chen"}, {"@type": "Person", "name": "Xuanhe Zhou"}, {"@type": "Person", "name": "Conghui He"}, {"@type": "Person", "name": "Cheng Tan"}], "url": "https://openraiser.github.io/scaling-for-scaling/", "image": "https://openraiser.github.io/scaling-for-scaling/images/tr_optimizer/logos/teaser.png", "keywords": ["optimizer benchmark", "large language model training", "optimizer taxonomy", "training stability", "memory efficient optimization"]}</script>
+    type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "name": "OmniOpt: Taxonomy, Geometry, and Benchmarking of Modern Optimizers", "headline": "OmniOpt: Taxonomy, Geometry, and Benchmarking of Modern Optimizers", "description": "A taxonomy, geometric framework, and cross-domain benchmark for modern optimizers across language-model scales, architectures, memory, cost, stability, and generalization.", "author": [{"@type": "Person", "name": "Siyuan Li"}, {"@type": "Person", "name": "Jiabao Pan"}, {"@type": "Person", "name": "Yumou Liu"}, {"@type": "Person", "name": "Zhuoli Ouyang"}, {"@type": "Person", "name": "Xin Jin"}, {"@type": "Person", "name": "Xinglong Xu"}, {"@type": "Person", "name": "Jingxuan Wei"}, {"@type": "Person", "name": "Shengye Pang"}, {"@type": "Person", "name": "Jintao Chen"}, {"@type": "Person", "name": "Xuanhe Zhou"}, {"@type": "Person", "name": "Conghui He"}, {"@type": "Person", "name": "Cheng Tan"}], "url": "https://openraiser.github.io/scaling-for-scaling/", "image": "https://openraiser.github.io/scaling-for-scaling/images/tr_optimizer/figures/fig2-timeline.png", "keywords": ["optimizer benchmark", "large language model training", "optimizer taxonomy", "training stability", "memory efficient optimization"]}</script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     :root {
@@ -915,8 +915,8 @@
   <a class="skip-link" href="#main">Skip to main content</a>
   <header class="topbar" role="banner">
     <nav aria-label="Primary">
-      <a class="brand" href="#hero"><img src="images/tr_optimizer/logos/web-logo.png" alt="Scaling for Scaling icon" />
-        <span>Scaling for Scaling</span></a>
+      <a class="brand" href="#hero"><img src="images/tr_optimizer/logos/web-logo.png" alt="OmniOpt icon" />
+        <span>OmniOpt</span></a>
       <div class="nav-links">
         <a href="#framework">Framework</a><a href="#taxonomy">Taxonomy</a><a href="#benchmark">Benchmark</a><a
           href="#results">Results</a><a href="#guide">Guide</a><a href="#tables">Tables</a><a
@@ -929,7 +929,7 @@
       <div class="wrap hero-layout">
         <div class="hero-copy">
           <div class="kicker">Optimizer taxonomy + benchmark</div>
-          <h1 id="hero-title">Scaling for Scaling</h1>
+          <h1 id="hero-title">OmniOpt</h1>
           <div class="title-subline">Taxonomy, Geometry, and Benchmarking of Modern Optimizers</div>
           <p class="lead">A unified meta-pipeline, LMO-grounded geometry, and cross-domain benchmark for choosing modern
             optimizers under compute, memory, stability, robustness, and generalization constraints.</p>
@@ -955,11 +955,11 @@
           </div>
         </div>
         <figure class="hero-card hero-figure">
-          <img class="paper-figure zoomable" src="images/tr_optimizer/logos/teaser.png"
-            alt="Overview teaser showing the Scaling for Scaling taxonomy and benchmark workflow" />
-          <figcaption>Optimizer design has moved from a single AdamW-style default into a diversified mechanism space.
-            This overview is not a leaderboard; it frames why the paper needs a shared taxonomy, geometry, and benchmark
-            protocol.</figcaption>
+          <img class="paper-figure zoomable" src="images/tr_optimizer/figures/fig2-timeline.png"
+            alt="Timeline showing optimizer design evolving from a single AdamW-style default into a diversified mechanism space across T1-T5 families" />
+          <figcaption><strong>Figure 2.</strong> Optimizer design has moved from a single AdamW-style default into a
+            diversified mechanism space. This overview is not a leaderboard; it frames why the paper needs a shared
+            taxonomy, geometry, and benchmark protocol.</figcaption>
         </figure>
         <div class="metrics" aria-label="Headline scope">
           <div class="metric"><strong>100+</strong><span>optimizer methods organized</span></div>
@@ -982,10 +982,20 @@
             only one or two stages, making comparison and composition easier.</p>
         </div>
         <div class="framework-flow">
-          <figure class="figure-frame"><img class="paper-figure zoomable" src="images/tr_optimizer/figures/pipeline.png"
+          <figure class="figure-frame"><img class="paper-figure zoomable"
+              src="images/tr_optimizer/figures/fig1-overview.png"
+              alt="Overview of the meta-pipeline, LMO framework, dual-dimension taxonomy, and benchmark connecting the paper's four components" />
+            <figcaption><strong>Figure 1.</strong> Overview of the proposed survey and benchmark framework for a wide
+              range of optimizers. The paper first introduces a universal meta-pipeline, then develops an LMO-driven
+              four-axis decomposition, builds a process-aligned methodological taxonomy and an effect-objective
+              taxonomy, and finally connects both taxonomies to a large-scale benchmark study.</figcaption>
+          </figure>
+          <figure class="figure-frame"><img class="paper-figure zoomable"
+              src="images/tr_optimizer/figures/fig3-meta-pipeline.png"
               alt="Universal meta-pipeline for a modern optimizer update" />
-            <figcaption>Universal meta-pipeline for one optimizer step. The figure is shown full-width because the stage
-              labels and tensor routes are the central visual evidence in this section.</figcaption>
+            <figcaption><strong>Figure 3.</strong> Universal meta-pipeline for one optimizer step. The figure is shown
+              full-width because the stage labels and tensor routes are the central visual evidence in this
+              section.</figcaption>
           </figure>
           <div class="stage-grid" aria-label="Universal meta-pipeline stages">
             <div class="stage-card"><strong>S0</strong>
@@ -1050,59 +1060,48 @@
           <div class="table-block framework-table-block">
             <table class="data-table compact-table framework-table" data-tex-label="tab:meta_pipeline_examples">
               <colgroup>
-                <col style="width:14%" />
-                <col style="width:15%" />
-                <col style="width:31%" />
-                <col style="width:10%" />
-                <col style="width:30%" />
+                <col style="width:22%" />
+                <col style="width:16%" />
+                <col style="width:62%" />
               </colgroup>
-              <caption>Representative optimizer families viewed through the universal meta-pipeline. Active stages carry
-                the defining mechanism; remaining stages reduce to identity maps or standard defaults.</caption>
+              <caption>Representative optimizer families viewed through the universal meta-pipeline. Only active
+                stages and defining mechanisms are shown; inactive stages follow identity maps or standard
+                defaults.</caption>
               <thead>
                 <tr>
-                  <th scope="col">Method</th>
+                  <th scope="col">Method (family)</th>
                   <th scope="col">Active stages</th>
                   <th scope="col">Core mechanism</th>
-                  <th scope="col">Family</th>
-                  <th scope="col">Pipeline constraint</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row" data-label="Method">AdamW</th>
+                  <th scope="row" data-label="Method (family)">AdamW (T1.1)</th>
                   <td data-label="Active stages">S3, S5</td>
-                  <td data-label="Core mechanism">First/second-order moment EMAs; decoupled weight decay</td>
-                  <td data-label="Family">T1</td>
-                  <td data-label="Pipeline constraint">S2, S4 identity; S1 uniform element-wise</td>
+                  <td data-label="Core mechanism">Moment EMAs (S3) with decoupled weight decay (S5)</td>
                 </tr>
                 <tr>
-                  <th scope="row" data-label="Method">Muon</th>
+                  <th scope="row" data-label="Method (family)">Muon (T2.1)</th>
                   <td data-label="Active stages">S1, S2</td>
-                  <td data-label="Core mechanism">Matrix routing; Newton-Schulz spectral orthogonalization</td>
-                  <td data-label="Family">T2.1</td>
-                  <td data-label="Pipeline constraint">S4 trivial (dimension-preserving); S3 standard momentum</td>
+                  <td data-label="Core mechanism">Matrix routing (S1) with Newton-Schulz spectral
+                    orthogonalization (S2)</td>
                 </tr>
                 <tr>
-                  <th scope="row" data-label="Method">GaLore</th>
+                  <th scope="row" data-label="Method (family)">GaLore (T2.3)</th>
                   <td data-label="Active stages">S1-S4</td>
-                  <td data-label="Core mechanism">Low-rank projection; subspace Adam state; inverse projection</td>
-                  <td data-label="Family">T2.3</td>
-                  <td data-label="Pipeline constraint">Dual S2/S4 via basis P_t; S5 standard</td>
+                  <td data-label="Core mechanism">Low-rank projection (S1/S2), subspace Adam state (S3), and inverse
+                    projection (S4)</td>
                 </tr>
                 <tr>
-                  <th scope="row" data-label="Method">Lion</th>
+                  <th scope="row" data-label="Method (family)">Lion (T3)</th>
                   <td data-label="Active stages">S2, S3</td>
-                  <td data-label="Core mechanism">Sign discretization of momentum-interpolated gradient</td>
-                  <td data-label="Family">T3</td>
-                  <td data-label="Pipeline constraint">S4 identity; no second-order state; fixed-magnitude update</td>
+                  <td data-label="Core mechanism">Momentum interpolation (S3) followed by sign discretization (S2)</td>
                 </tr>
                 <tr>
-                  <th scope="row" data-label="Method">SAM</th>
+                  <th scope="row" data-label="Method (family)">SAM (T5.1)</th>
                   <td data-label="Active stages">S0, S5</td>
-                  <td data-label="Core mechanism">Perturbation-induced gradient; neighborhood-regularized write-back
-                  </td>
-                  <td data-label="Family">T5.1</td>
-                  <td data-label="Pipeline constraint">S1-S4 execute element-wise defaults</td>
+                  <td data-label="Core mechanism">Perturbation-induced gradient (S0) with neighborhood-regularized
+                    writeback (S5)</td>
                 </tr>
               </tbody>
             </table>
@@ -1139,6 +1138,46 @@
             <p>State reduction, curvature, perturbation, and trust-region controls.</p>
           </div>
         </div>
+        <div class="figure-stack" aria-label="Mechanism diagrams for each optimizer family">
+          <figure class="figure-frame"><img class="paper-figure zoomable"
+              src="images/tr_optimizer/figures/fig4-t1-mechanism.png"
+              alt="Mechanism overview of T1 element-wise adaptive-moment and scalar control methods" />
+            <figcaption><strong>Figure 4.</strong> Mechanism overview of T1 element-wise adaptive-moment and scalar
+              control methods. The family is organized by the dominant intervention in the update: direct scalar or
+              Adam-style variants, additional temporal or estimator-correction channels, and outer iterate or
+              global-scale control.</figcaption>
+          </figure>
+          <figure class="figure-frame"><img class="paper-figure zoomable"
+              src="images/tr_optimizer/figures/fig5-t2-mechanism.png"
+              alt="Mechanism schematic for T2 matrix-level structural methods" />
+            <figcaption><strong>Figure 5.</strong> Mechanism schematic for T2 matrix-level structural methods. The
+              schematic summarizes the three matrix routes used in this survey: spectral direction selection,
+              Kronecker or structured-Fisher preconditioning, and low-rank subspace projection.</figcaption>
+          </figure>
+          <figure class="figure-frame"><img class="paper-figure zoomable"
+              src="images/tr_optimizer/figures/fig6-t3-mechanism.png"
+              alt="Mechanism schematic for T3 discretization and directional quantization methods" />
+            <figcaption><strong>Figure 6.</strong> Mechanism schematic for T3 discretization and directional
+              quantization. This schematic groups discretization and directional quantization mechanisms by their
+              sign-direction generation methods.</figcaption>
+          </figure>
+          <figure class="figure-frame"><img class="paper-figure zoomable"
+              src="images/tr_optimizer/figures/fig7-t4-mechanism.png"
+              alt="Mechanism schematic for T4 state compression and structural aggregation methods" />
+            <figcaption><strong>Figure 7.</strong> Mechanism schematic for T4 state compression and structural
+              aggregation. The schematic organizes the family by the form of memory reduction: factored second-moment
+              storage, low-bit state representation, shared adaptive statistics, and streaming gradient
+              consumption.</figcaption>
+          </figure>
+          <figure class="figure-frame"><img class="paper-figure zoomable"
+              src="images/tr_optimizer/figures/fig8-t5-mechanism.png"
+              alt="Mechanism schematic for T5 curvature-aware and geometric regularization methods" />
+            <figcaption><strong>Figure 8.</strong> Mechanism schematic for T5 curvature-aware and geometric
+              regularization methods. The schematic organizes the family by where the geometric intervention enters the
+              update: perturbed-gradient evaluation, diagonal-curvature estimation, post-update filtering, or
+              layer-wise trust-region scaling.</figcaption>
+          </figure>
+        </div>
         <div class="table-block">
           <table class="data-table responsive-matrix" data-tex-label="tab:effect_objectives">
             <caption>Dimension-B effect objectives and measurement sources.</caption>
@@ -1156,64 +1195,61 @@
               <tr>
                 <th scope="row" data-label="ID">O1</th>
                 <td data-label="Name">Convergence Efficiency</td>
-                <td data-label="Definition">Loss reduction or target-quality attainment under fixed step, token,
-                  wall-clock, or compute budget</td>
+                <td data-label="Definition">Loss reduction and time-to-target under a fixed training budget</td>
                 <td data-label="Data source">Train/validation loss logs</td>
                 <td data-label="Extra cost">None</td>
-                <td data-label="Typical outputs">Loss at step T; steps-to-threshold; token efficiency</td>
+                <td data-label="Typical outputs">Final loss; steps-to-threshold; token efficiency</td>
               </tr>
               <tr>
                 <th scope="row" data-label="ID">O2</th>
                 <td data-label="Name">Step cost</td>
-                <td data-label="Definition">Extra optimizer computation, synchronization, or forward/backward cost
-                  relative to a baseline</td>
-                <td data-label="Data source">Timers, profiler, analytic FLOP model</td>
+                <td data-label="Definition">Extra per-step computation and synchronization relative to a baseline</td>
+                <td data-label="Data source">Timers, FLOP analysis</td>
                 <td data-label="Extra cost">Recorded during training</td>
-                <td data-label="Typical outputs">Step time; optimizer FLOPs; extra backward count</td>
+                <td data-label="Typical outputs">Step time; FLOPs; extra backward count</td>
               </tr>
               <tr>
                 <th scope="row" data-label="ID">O3</th>
                 <td data-label="Name">Memory</td>
-                <td data-label="Definition">Memory from optimizer states, gradient buffers, temporary factors,
-                  projection bases, and quantization buffers</td>
-                <td data-label="Data source">Memory profiler, analytic byte model</td>
+                <td data-label="Definition">Memory from optimizer states and associated buffers</td>
+                <td data-label="Data source">Memory profiler, byte model</td>
                 <td data-label="Extra cost">Recorded during training</td>
-                <td data-label="Typical outputs">Peak memory; persistent state bytes; temporary buffer bytes</td>
+                <td data-label="Typical outputs">Peak memory; state and buffer bytes</td>
               </tr>
               <tr>
                 <th scope="row" data-label="ID">O4</th>
                 <td data-label="Name">Stability</td>
-                <td data-label="Definition">Robustness to spikes, divergence, overflow, and gradient fluctuations</td>
-                <td data-label="Data source">Loss and gradient-norm time series</td>
+                <td data-label="Definition">Robustness to spikes, divergence, and gradient fluctuations</td>
+                <td data-label="Data source">Loss and gradient-norm curves</td>
                 <td data-label="Extra cost">Offline post-processing</td>
-                <td data-label="Typical outputs">Spike frequency; gradient CV; divergence rate; completion rate</td>
+                <td data-label="Typical outputs">Spike rate; gradient CV; divergence rate</td>
               </tr>
               <tr>
                 <th scope="row" data-label="ID">O5</th>
                 <td data-label="Name">Hparam robustness</td>
-                <td data-label="Definition">Sensitivity across learning rate, schedule, weight decay, momentum, batch
-                  size, and method-specific knobs</td>
+                <td data-label="Definition">Sensitivity to learning rate, decay, batch size, and other knobs</td>
                 <td data-label="Data source">Multiple training runs</td>
                 <td data-label="Extra cost">Search or transfer experiments</td>
-                <td data-label="Typical outputs">Acceptable LR interval; performance variance; tuning burden</td>
+                <td data-label="Typical outputs">Usable LR interval; performance variance; tuning burden</td>
               </tr>
               <tr>
                 <th scope="row" data-label="ID">O6</th>
                 <td data-label="Name">Generalization</td>
-                <td data-label="Definition">Quality outside the training objective, from validation to downstream, OOD,
-                  or scale-transfer evaluation</td>
-                <td data-label="Data source">Validation, downstream, OOD, scale-transfer evaluation</td>
-                <td data-label="Extra cost">Low for validation; high for full evaluation</td>
-                <td data-label="Typical outputs">Validation loss; train-val gap; downstream score; OOD retention</td>
+                <td data-label="Definition">Quality beyond the training objective (validation, downstream, OOD,
+                  transfer)</td>
+                <td data-label="Data source">Validation and downstream evaluation</td>
+                <td data-label="Extra cost">Low for validation, high for full evaluation</td>
+                <td data-label="Typical outputs">Validation loss; generalization gap; downstream score</td>
               </tr>
             </tbody>
           </table>
         </div>
         <div class="table-block">
           <table class="data-table compact-table" data-tex-label="tab:taxonomy_cross_matrix">
-            <caption>Compact cross-matrix between method families and effect objectives. ``++&#x27;&#x27; denotes a
-              primary target, ``+&#x27;&#x27; a common secondary target, ``0&#x27;&#x27; protocol-dependent neutrality,
-              and ``-&#x27;&#x27; a likely cost.</caption>
+            <caption>Compact cross-matrix between method families and effect objectives. ``++&#x27;&#x27; denotes a strong
+              favorable prior, ``+&#x27;&#x27; a conditional or protocol-sensitive favorable effect, ``0&#x27;&#x27;
+              protocol-dependent neutrality, ``-&#x27;&#x27; a conditional cost, and ``--&#x27;&#x27; a strong likely
+              cost.</caption>
             <thead>
               <tr>
                 <th scope="col">Family</th>
@@ -1230,45 +1266,45 @@
                 <th scope="row" data-label="Family">T1 Element-wise adaptive moment and scalar control</th>
                 <td data-label="O1">++</td>
                 <td data-label="O2">0</td>
-                <td data-label="O3">-</td>
-                <td data-label="O4">+</td>
-                <td data-label="O5">+</td>
-                <td data-label="O6">0/+</td>
+                <td data-label="O3">--</td>
+                <td data-label="O4">++</td>
+                <td data-label="O5">++</td>
+                <td data-label="O6">+</td>
               </tr>
               <tr>
                 <th scope="row" data-label="Family">T2 Matrix-level structural methods</th>
                 <td data-label="O1">++</td>
-                <td data-label="O2">-</td>
-                <td data-label="O3">-/0</td>
-                <td data-label="O4">+</td>
-                <td data-label="O5">0/+</td>
-                <td data-label="O6">0/+</td>
+                <td data-label="O2">--</td>
+                <td data-label="O3">-</td>
+                <td data-label="O4">++</td>
+                <td data-label="O5">+</td>
+                <td data-label="O6">+</td>
               </tr>
               <tr>
                 <th scope="row" data-label="Family">T3 Discretized directions</th>
-                <td data-label="O1">+/0</td>
-                <td data-label="O2">+</td>
-                <td data-label="O3">+</td>
-                <td data-label="O4">+/0</td>
+                <td data-label="O1">+</td>
+                <td data-label="O2">++</td>
+                <td data-label="O3">++</td>
+                <td data-label="O4">+</td>
                 <td data-label="O5">0</td>
                 <td data-label="O6">0</td>
               </tr>
               <tr>
                 <th scope="row" data-label="Family">T4 State compression</th>
-                <td data-label="O1">0/-</td>
-                <td data-label="O2">0/+</td>
+                <td data-label="O1">-</td>
+                <td data-label="O2">+</td>
                 <td data-label="O3">++</td>
-                <td data-label="O4">0/-</td>
+                <td data-label="O4">-</td>
                 <td data-label="O5">0</td>
-                <td data-label="O6">0/-</td>
+                <td data-label="O6">-</td>
               </tr>
               <tr>
                 <th scope="row" data-label="Family">T5 Geometry regularization</th>
-                <td data-label="O1">+/0</td>
-                <td data-label="O2">-</td>
-                <td data-label="O3">0/-</td>
+                <td data-label="O1">+</td>
+                <td data-label="O2">--</td>
+                <td data-label="O3">-</td>
                 <td data-label="O4">++</td>
-                <td data-label="O5">+</td>
+                <td data-label="O5">++</td>
                 <td data-label="O6">++</td>
               </tr>
             </tbody>
@@ -1277,7 +1313,7 @@
         <div class="table-block">
           <table class="data-table responsive-matrix dense-table" data-tex-label="tab:opt_coverage">
             <caption>Taxonomy and four-axis coverage of the 24 benchmarked optimizers. For each optimizer we list its
-              subclass, its four-axis coordinates (Axes I--IV of Section [ref]), and the meta-pipeline stage(s) with a
+              subclass, its four-axis coordinates (Axes I--IV of Section 3.2), and the meta-pipeline stage(s) with a
               non-identity operation. Axis III is shown through its two equivalent readings, the LMO constraint geometry
               and the preconditioner, which are two faces of the same direction operator _t. State estimation (Axis II)
               absorbs momentum, the second-moment / Hessian proxy H_t, variance reduction (FO/VR/STORM), and any state
@@ -1459,7 +1495,7 @@
                 <th scope="rowgroup" colspan="8">T4: State-Compressed Optimization</th>
               </tr>
               <tr>
-                <th scope="row" data-label="Optimizer">Adafactor</th>
+                <th scope="row" data-label="Optimizer">AdaFactor</th>
                 <td data-label="Sub.">T4.1</td>
                 <td data-label="Axis I domain">full, factored</td>
                 <td data-label="Axis II state">row/col 2nd-mom factors</td>
@@ -1479,7 +1515,7 @@
                 <td data-label="Pipeline stages">S3</td>
               </tr>
               <tr>
-                <th scope="row" data-label="Optimizer">Adam8bit</th>
+                <th scope="row" data-label="Optimizer">8-bit Adam</th>
                 <td data-label="Sub.">T4.2</td>
                 <td data-label="Axis I domain">full, INT8 state</td>
                 <td data-label="Axis II state">quant.\ m_t,v_t</td>
@@ -1501,11 +1537,11 @@
               <tr>
                 <th scope="row" data-label="Optimizer">APOLLO</th>
                 <td data-label="Sub.">T4.3</td>
-                <td data-label="Axis I domain">rand-proj state</td>
+                <td data-label="Axis I domain">full</td>
                 <td data-label="Axis II state">projected estimator</td>
-                <td data-label="Axis III LMO">projected adapt.\ box</td>
+                <td data-label="Axis III LMO">adapt.\ coord box</td>
                 <td data-label="Axis III precond.">proj.\ diag, 12</td>
-                <td data-label="Axis IV finalize">proj-back + LR</td>
+                <td data-label="Axis IV finalize">LR</td>
                 <td data-label="Pipeline stages">S1/S3</td>
               </tr>
               <tr>
@@ -1572,8 +1608,8 @@
           <figure class="figure-frame"><img class="paper-figure zoomable"
               src="images/tr_optimizer/figures/pareto-1b-advance.png"
               alt="Stage-1 Pareto frontiers for 1B models comparing perplexity with runtime and optimizer memory" />
-            <figcaption>Stage-1 1B Pareto frontiers: lower-left is better for PPL versus runtime and optimizer-state
-              memory.</figcaption>
+            <figcaption><strong>Figure 9.</strong> Stage-1 1B Pareto frontiers: lower-left is better for PPL versus
+              runtime and optimizer-state memory.</figcaption>
           </figure>
           <div class="takeaway-grid" aria-label="Benchmark evidence takeaways">
             <div class="takeaway"><strong>Quality frontier</strong>
@@ -1585,7 +1621,7 @@
                 frontier.</p>
             </div>
             <div class="takeaway"><strong>Memory frontier</strong>
-              <p>Adafactor, APOLLO, and GaLore reduce optimizer state, but memory wins do not automatically transfer to
+              <p>AdaFactor, APOLLO, and GaLore reduce optimizer state, but memory wins do not automatically transfer to
                 harder regimes.</p>
             </div>
             <div class="takeaway"><strong>Transfer frontier</strong>
@@ -1597,14 +1633,15 @@
             <figure class="figure-frame"><img class="paper-figure zoomable"
                 src="images/tr_optimizer/figures/heatmap-24opt.png"
                 alt="Optimizer-level heatmap of C4 perplexity runtime and memory for 24 optimizers" />
-              <figcaption>Stage-1 optimizer-level heatmap of C4 PPL, runtime, and memory. It shows why the short-context
-                screen is multi-objective rather than a flat leaderboard.</figcaption>
+              <figcaption><strong>Figure 10.</strong> Stage-1 optimizer-level heatmap of C4 PPL, runtime, and memory.
+                It shows why the short-context screen is multi-objective rather than a flat leaderboard.</figcaption>
             </figure>
             <figure class="figure-frame"><img class="paper-figure zoomable"
                 src="images/tr_optimizer/figures/rank-stability-v2.png"
                 alt="Rank stability across optimizers and architectures in FineWeb-Edu long-context scenarios" />
-              <figcaption>Stage-2 cross-scenario rank stability under FineWeb-Edu 32k. SOAP transfers most consistently;
-                APOLLO's short-context strength does not survive this setting.</figcaption>
+              <figcaption><strong>Figure 11.</strong> Stage-2 cross-scenario rank stability under FineWeb-Edu 32k.
+                SOAP transfers most consistently; APOLLO's short-context strength does not survive this
+                setting.</figcaption>
             </figure>
           </div>
         </div>
@@ -1631,7 +1668,7 @@
             <p>Matrix geometry is useful but architecture-aware: RMNP is the balanced option, while Muon is
               mechanistically interpretable.</p>
           </div>
-          <div class="takeaway"><strong>APOLLO / Adafactor</strong>
+          <div class="takeaway"><strong>APOLLO / AdaFactor</strong>
             <p>State compression is attractive under memory pressure, but APOLLO's short-context win collapses under
               long context.</p>
           </div>
@@ -1644,27 +1681,28 @@
           <figure class="figure-frame"><img class="paper-figure zoomable"
               src="images/tr_optimizer/figures/heatmap-family.png"
               alt="Family-level objective summary over six optimizer objectives" />
-            <figcaption>Family-level objective summary over O1-O6, connecting measured quality, runtime, memory,
-              stability, robustness, and generalization back to the optimizer-family taxonomy.</figcaption>
+            <figcaption><strong>Figure 14.</strong> Family-level objective summary over O1-O6, connecting measured
+              quality, runtime, memory, stability, robustness, and generalization back to the optimizer-family
+              taxonomy.</figcaption>
           </figure>
           <div class="paired-figures">
             <figure class="figure-frame"><img class="paper-figure zoomable"
                 src="images/tr_optimizer/figures/fig-o4-heatmap.png"
                 alt="Gradient-norm stability heatmap across optimizers and architectures" />
-              <figcaption>Auxiliary O4 stability analysis from gradient-norm dynamics: smooth training, final PPL, and
-                transfer are related but distinct objectives.</figcaption>
+              <figcaption><strong>Figure 12.</strong> Auxiliary O4 stability analysis from gradient-norm dynamics:
+                smooth training, final PPL, and transfer are related but distinct objectives.</figcaption>
             </figure>
             <figure class="figure-frame"><img class="paper-figure zoomable" src="images/tr_optimizer/figures/fig-o5.png"
                 alt="Learning-rate perturbation robustness panels for optimizer sensitivity" />
-              <figcaption>O5 learning-rate perturbation robustness: tuned quality can hide sharp sensitivity when the
-                learning rate is misspecified.</figcaption>
+              <figcaption><strong>Figure 13.</strong> O5 learning-rate perturbation robustness: tuned quality can hide
+                sharp sensitivity when the learning rate is misspecified.</figcaption>
             </figure>
           </div>
           <figure class="figure-frame"><img class="paper-figure zoomable"
               src="images/tr_optimizer/figures/muon-ablation-c4-350m.png"
               alt="Mechanistic ablation of Muon on C4 350M showing core operations gain operations and ordering constraints" />
-            <figcaption>Mechanistic ablation of Muon on C4 350M. The full-width placement keeps the core recovery, gain
-              design, and operator-order blocks readable.</figcaption>
+            <figcaption><strong>Figure 15.</strong> Mechanistic ablation of Muon on C4 350M. The full-width placement
+              keeps the core recovery, gain design, and operator-order blocks readable.</figcaption>
           </figure>
           <div class="table-block narrow-table-block">
             <table class="data-table compact-table" data-tex-label="tab:muon_cross_validation">
@@ -1686,7 +1724,7 @@
                   <th scope="rowgroup" colspan="6">Standard Transformer: gains are stackable</th>
                 </tr>
                 <tr>
-                  <th scope="row" data-label="Scenario">C4-LLaMA3, 350M</th>
+                  <th scope="row" data-label="Scenario">C4-LLaMA, 350M</th>
                   <td data-label="Standard Muon">16.60</td>
                   <td data-label="Symmetric LR Scaling">16.52</td>
                   <td data-label="Post-NS Nesterov">16.57</td>
@@ -1694,7 +1732,7 @@
                   <td data-label="Best config.">Both combined</td>
                 </tr>
                 <tr>
-                  <th scope="row" data-label="Scenario">C4-LLaMA3, 1B</th>
+                  <th scope="row" data-label="Scenario">C4-LLaMA, 1B</th>
                   <td data-label="Standard Muon">13.72</td>
                   <td data-label="Symmetric LR Scaling">13.64</td>
                   <td data-label="Post-NS Nesterov">13.64</td>
@@ -1752,8 +1790,8 @@
               validated on the target architecture.</p>
           </div>
           <div class="decision-card"><strong>Memory pressure</strong>
-            <h3>Adafactor / APOLLO</h3>
-            <p>Adafactor is the safer low-memory baseline. APOLLO is high reward but high risk: strong at short context,
+            <h3>AdaFactor / APOLLO</h3>
+            <p>AdaFactor is the safer low-memory baseline. APOLLO is high reward but high risk: strong at short context,
               weak under long-context transfer.</p>
           </div>
           <div class="decision-card"><strong>Exploration budget</strong>
@@ -1783,8 +1821,8 @@
               </tr>
               <tr>
                 <th scope="row" data-label="Tier">Tier III</th>
-                <td data-label="Optimizers">RAdam, NAdam, Prodigy, AdaBelief, GaLore, Shampoo, Adam8bit, CAME,
-                  Adafactor, Adam-mini, LAMB, Sophia</td>
+                <td data-label="Optimizers">RAdam, NAdam, Prodigy, AdaBelief, GaLore, Shampoo, 8-bit Adam, CAME,
+                  AdaFactor, Adam-mini, LAMB, Sophia</td>
               </tr>
             </tbody>
           </table>
@@ -1803,8 +1841,8 @@
             screens, rows turn into labeled cards instead of requiring horizontal scroll.</p>
         </div>
         <div class="table-block">
-          <table class="data-table responsive-matrix dense-table" data-tex-label="tab:c4_llama3_full_screening">
-            <caption>Stage-1 screening on C4 (LLaMA-3, seq.\ 256). C4 validation PPL, optimizer-state memory (Mem), and
+          <table class="data-table responsive-matrix dense-table" data-tex-label="tab:c4_llama_full_screening">
+            <caption>Stage-1 screening on C4 (LLaMA, seq.\ 256). C4 validation PPL, optimizer-state memory (Mem), and
               per-step runtime (T) at four scales; lower is better. Grouped by family, sorted by 1B PPL.</caption>
             <thead>
               <tr>
@@ -1830,7 +1868,7 @@
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">Adan</th>
-                <td data-label="Venue">TPAMI&#x27;23</td>
+                <td data-label="Venue">TPAMI&#x27;24</td>
                 <td data-label="60M PPL">30.25</td>
                 <td data-label="60M Mem GB">0.433</td>
                 <td data-label="60M T ms">2.32</td>
@@ -1869,7 +1907,7 @@
                 <td data-label="130M PPL">23.18</td>
                 <td data-label="130M Mem GB">0.500</td>
                 <td data-label="130M T ms">2.31</td>
-                <td data-label="350M PPL">17.32</td>
+                <td data-label="350M PPL">17.78</td>
                 <td data-label="350M Mem GB">1.371</td>
                 <td data-label="350M T ms">5.97</td>
                 <td data-label="1B PPL">14.48</td>
@@ -1878,7 +1916,7 @@
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">NAdam</th>
-                <td data-label="Venue">ICLR&#x27;18</td>
+                <td data-label="Venue">ICLR&#x27;16</td>
                 <td data-label="60M PPL">33.72</td>
                 <td data-label="60M Mem GB">0.217</td>
                 <td data-label="60M T ms">3.45</td>
@@ -1910,7 +1948,7 @@
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">Prodigy</th>
-                <td data-label="Venue">ICML&#x27;23</td>
+                <td data-label="Venue">ICML&#x27;24</td>
                 <td data-label="60M PPL">33.44</td>
                 <td data-label="60M Mem GB">0.433</td>
                 <td data-label="60M T ms">8.36</td>
@@ -1968,10 +2006,10 @@
                 <td data-label="130M PPL">21.81</td>
                 <td data-label="130M Mem GB">0.250</td>
                 <td data-label="130M T ms">30.48</td>
-                <td data-label="350M PPL">16.61</td>
+                <td data-label="350M PPL">16.60</td>
                 <td data-label="350M Mem GB">0.686</td>
                 <td data-label="350M T ms">61.66</td>
-                <td data-label="1B PPL">13.73</td>
+                <td data-label="1B PPL">13.72</td>
                 <td data-label="1B Mem GB">2.495</td>
                 <td data-label="1B T ms">379.0</td>
               </tr>
@@ -1993,7 +2031,7 @@
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">SOAP</th>
-                <td data-label="Venue">arXiv&#x27;24</td>
+                <td data-label="Venue">ICLR&#x27;25</td>
                 <td data-label="60M PPL">29.47</td>
                 <td data-label="60M Mem GB">0.731</td>
                 <td data-label="60M T ms">50.58</td>
@@ -2025,7 +2063,7 @@
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">Shampoo</th>
-                <td data-label="Venue">arXiv&#x27;18</td>
+                <td data-label="Venue">ICML&#x27;18</td>
                 <td data-label="60M PPL">30.22</td>
                 <td data-label="60M Mem GB">0.217</td>
                 <td data-label="60M T ms">22.36</td>
@@ -2060,7 +2098,7 @@
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">Lion</th>
-                <td data-label="Venue">arXiv&#x27;23</td>
+                <td data-label="Venue">NeurIPS&#x27;23</td>
                 <td data-label="60M PPL">35.94</td>
                 <td data-label="60M Mem GB">0.109</td>
                 <td data-label="60M T ms">2.07</td>
@@ -2110,7 +2148,7 @@
                 <td data-label="1B T ms">62.33</td>
               </tr>
               <tr>
-                <th scope="row" data-label="Optimizer">Adam8bit</th>
+                <th scope="row" data-label="Optimizer">8-bit Adam</th>
                 <td data-label="Venue">ICLR&#x27;22</td>
                 <td data-label="60M PPL">30.46</td>
                 <td data-label="60M Mem GB">0.110</td>
@@ -2142,7 +2180,7 @@
                 <td data-label="1B T ms">87.46</td>
               </tr>
               <tr>
-                <th scope="row" data-label="Optimizer">Adafactor</th>
+                <th scope="row" data-label="Optimizer">AdaFactor</th>
                 <td data-label="Venue">ICML&#x27;18</td>
                 <td data-label="60M PPL">30.00</td>
                 <td data-label="60M Mem GB">0.001</td>
@@ -2210,7 +2248,7 @@
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">Sophia</th>
-                <td data-label="Venue">arXiv&#x27;23</td>
+                <td data-label="Venue">ICLR&#x27;24</td>
                 <td data-label="60M PPL">36.27</td>
                 <td data-label="60M Mem GB">0.217</td>
                 <td data-label="60M T ms">3.92</td>
@@ -2231,201 +2269,281 @@
         </div>
         <div class="table-block">
           <table class="data-table responsive-matrix dense-table" data-tex-label="tab:stage2_cross_arch">
-            <caption>Stage-2 cross-architecture generalization (FineWeb-Edu, 32k). WikiText test PPL at 340M and 1B
-              across four architectures. As absolute PPL is not comparable across architectures, the last columns give
-              each optimizer&#x27;s mean rank and range over the eight scenarios (lower is better). Per-scenario best in
-              green; gray = AdamW.</caption>
+            <caption>Stage-2 cross-architecture generalization (FineWeb-Edu, 32k). Left block: WikiText test PPL
+              (lower is better) at 340M and 1B across four architectures; absolute PPL is not comparable across
+              architectures, so rows are ordered by PPL-based cross-scenario stability. Right block: downstream
+              commonsense-reasoning accuracy (CS Avg, %, average over ten lm-eval-harness tasks; higher is better).
+              Gray row = AdamW. The best PPL is almost always SOAP, whereas the best CS Avg is spread across SOAP,
+              MARS-AdamW, RMNP, and Muon.</caption>
             <thead>
               <tr>
                 <th scope="col">Optimizer</th>
-                <th scope="col">Transformer++ 340M</th>
-                <th scope="col">Transformer++ 1B</th>
-                <th scope="col">Gated DeltaNet 340M</th>
-                <th scope="col">Gated DeltaNet 1B</th>
-                <th scope="col">DeltaNet 340M</th>
-                <th scope="col">DeltaNet 1B</th>
-                <th scope="col">GLA 340M</th>
-                <th scope="col">GLA 1B</th>
-                <th scope="col">Mean rank</th>
-                <th scope="col">Rank range</th>
+                <th scope="col">PPL Tr++ 340M</th>
+                <th scope="col">PPL Tr++ 1B</th>
+                <th scope="col">PPL GDN 340M</th>
+                <th scope="col">PPL GDN 1B</th>
+                <th scope="col">PPL Delta 340M</th>
+                <th scope="col">PPL Delta 1B</th>
+                <th scope="col">PPL GLA 340M</th>
+                <th scope="col">PPL GLA 1B</th>
+                <th scope="col">CS Avg Tr++ 340M</th>
+                <th scope="col">CS Avg Tr++ 1B</th>
+                <th scope="col">CS Avg GDN 340M</th>
+                <th scope="col">CS Avg GDN 1B</th>
+                <th scope="col">CS Avg Delta 340M</th>
+                <th scope="col">CS Avg Delta 1B</th>
+                <th scope="col">CS Avg GLA 340M</th>
+                <th scope="col">CS Avg GLA 1B</th>
               </tr>
             </thead>
             <tbody>
               <tr class="group-row">
-                <th scope="rowgroup" colspan="11">T1: Element-wise Adaptive Moment</th>
+                <th scope="rowgroup" colspan="17">T1: Element-wise Adaptive Moment</th>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">MARS-AdamW</th>
-                <td data-label="Transformer++ 340M">24.57</td>
-                <td data-label="Transformer++ 1B">18.94</td>
-                <td data-label="Gated DeltaNet 340M">24.17</td>
-                <td data-label="Gated DeltaNet 1B">20.04</td>
-                <td data-label="DeltaNet 340M">26.79</td>
-                <td data-label="DeltaNet 1B">20.67</td>
-                <td data-label="GLA 340M">28.28</td>
-                <td data-label="GLA 1B">21.89</td>
-                <td data-label="Mean rank">3.12</td>
-                <td data-label="Rank range">[2-5]</td>
+                <td data-label="PPL Tr++ 340M">24.57</td>
+                <td data-label="PPL Tr++ 1B">18.94</td>
+                <td data-label="PPL GDN 340M">24.17</td>
+                <td data-label="PPL GDN 1B">20.04</td>
+                <td data-label="PPL Delta 340M">26.79</td>
+                <td data-label="PPL Delta 1B">20.67</td>
+                <td data-label="PPL GLA 340M">28.28</td>
+                <td data-label="PPL GLA 1B">21.89</td>
+                <td data-label="CS Avg Tr++ 340M">52.50</td>
+                <td data-label="CS Avg Tr++ 1B">57.46</td>
+                <td data-label="CS Avg GDN 340M">54.91</td>
+                <td data-label="CS Avg GDN 1B">58.18</td>
+                <td data-label="CS Avg Delta 340M">51.69</td>
+                <td data-label="CS Avg Delta 1B">56.80</td>
+                <td data-label="CS Avg GLA 340M">51.24</td>
+                <td data-label="CS Avg GLA 1B">55.71</td>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">AdamW</th>
-                <td data-label="Transformer++ 340M">24.62</td>
-                <td data-label="Transformer++ 1B">18.90</td>
-                <td data-label="Gated DeltaNet 340M">24.47</td>
-                <td data-label="Gated DeltaNet 1B">20.33</td>
-                <td data-label="DeltaNet 340M">27.16</td>
-                <td data-label="DeltaNet 1B">20.66</td>
-                <td data-label="GLA 340M">28.67</td>
-                <td data-label="GLA 1B">22.06</td>
-                <td data-label="Mean rank">4.62</td>
-                <td data-label="Rank range">[2-6]</td>
+                <td data-label="PPL Tr++ 340M">24.62</td>
+                <td data-label="PPL Tr++ 1B">18.90</td>
+                <td data-label="PPL GDN 340M">24.47</td>
+                <td data-label="PPL GDN 1B">20.33</td>
+                <td data-label="PPL Delta 340M">27.16</td>
+                <td data-label="PPL Delta 1B">20.66</td>
+                <td data-label="PPL GLA 340M">28.67</td>
+                <td data-label="PPL GLA 1B">22.06</td>
+                <td data-label="CS Avg Tr++ 340M">52.28</td>
+                <td data-label="CS Avg Tr++ 1B">56.55</td>
+                <td data-label="CS Avg GDN 340M">53.67</td>
+                <td data-label="CS Avg GDN 1B">57.01</td>
+                <td data-label="CS Avg Delta 340M">51.74</td>
+                <td data-label="CS Avg Delta 1B">55.56</td>
+                <td data-label="CS Avg GLA 340M">51.06</td>
+                <td data-label="CS Avg GLA 1B">56.69</td>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">Adan</th>
-                <td data-label="Transformer++ 340M">25.55</td>
-                <td data-label="Transformer++ 1B">19.41</td>
-                <td data-label="Gated DeltaNet 340M">24.78</td>
-                <td data-label="Gated DeltaNet 1B">20.55</td>
-                <td data-label="DeltaNet 340M">27.28</td>
-                <td data-label="DeltaNet 1B">20.88</td>
-                <td data-label="GLA 340M">29.00</td>
-                <td data-label="GLA 1B">22.51</td>
-                <td data-label="Mean rank">7.12</td>
-                <td data-label="Rank range">[5-9]</td>
+                <td data-label="PPL Tr++ 340M">25.55</td>
+                <td data-label="PPL Tr++ 1B">19.41</td>
+                <td data-label="PPL GDN 340M">24.78</td>
+                <td data-label="PPL GDN 1B">20.55</td>
+                <td data-label="PPL Delta 340M">27.28</td>
+                <td data-label="PPL Delta 1B">20.88</td>
+                <td data-label="PPL GLA 340M">29.00</td>
+                <td data-label="PPL GLA 1B">22.51</td>
+                <td data-label="CS Avg Tr++ 340M">52.48</td>
+                <td data-label="CS Avg Tr++ 1B">57.21</td>
+                <td data-label="CS Avg GDN 340M">52.83</td>
+                <td data-label="CS Avg GDN 1B">57.93</td>
+                <td data-label="CS Avg Delta 340M">51.78</td>
+                <td data-label="CS Avg Delta 1B">56.50</td>
+                <td data-label="CS Avg GLA 340M">51.01</td>
+                <td data-label="CS Avg GLA 1B">55.07</td>
               </tr>
               <tr class="group-row">
-                <th scope="rowgroup" colspan="11">T2: Matrix-Structured Methods</th>
+                <th scope="rowgroup" colspan="17">T2: Matrix-Structured Methods</th>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">SOAP</th>
-                <td data-label="Transformer++ 340M">23.90</td>
-                <td data-label="Transformer++ 1B">18.72</td>
-                <td data-label="Gated DeltaNet 340M">23.85</td>
-                <td data-label="Gated DeltaNet 1B">19.86</td>
-                <td data-label="DeltaNet 340M">26.02</td>
-                <td data-label="DeltaNet 1B">20.38</td>
-                <td data-label="GLA 340M">27.04</td>
-                <td data-label="GLA 1B">20.62</td>
-                <td data-label="Mean rank">1.12</td>
-                <td data-label="Rank range">[1-2]</td>
+                <td data-label="PPL Tr++ 340M">23.90</td>
+                <td data-label="PPL Tr++ 1B">18.72</td>
+                <td data-label="PPL GDN 340M">23.85</td>
+                <td data-label="PPL GDN 1B">19.86</td>
+                <td data-label="PPL Delta 340M">26.02</td>
+                <td data-label="PPL Delta 1B">20.38</td>
+                <td data-label="PPL GLA 340M">27.04</td>
+                <td data-label="PPL GLA 1B">20.62</td>
+                <td data-label="CS Avg Tr++ 340M">53.75</td>
+                <td data-label="CS Avg Tr++ 1B">57.71</td>
+                <td data-label="CS Avg GDN 340M">54.77</td>
+                <td data-label="CS Avg GDN 1B">57.22</td>
+                <td data-label="CS Avg Delta 340M">52.60</td>
+                <td data-label="CS Avg Delta 1B">56.49</td>
+                <td data-label="CS Avg GLA 340M">52.21</td>
+                <td data-label="CS Avg GLA 1B">57.57</td>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">RMNP</th>
-                <td data-label="Transformer++ 340M">24.37</td>
-                <td data-label="Transformer++ 1B">19.40</td>
-                <td data-label="Gated DeltaNet 340M">23.65</td>
-                <td data-label="Gated DeltaNet 1B">20.26</td>
-                <td data-label="DeltaNet 340M">26.80</td>
-                <td data-label="DeltaNet 1B">21.06</td>
-                <td data-label="GLA 340M">28.60</td>
-                <td data-label="GLA 1B">22.23</td>
-                <td data-label="Mean rank">4.00</td>
-                <td data-label="Rank range">[1-7]</td>
+                <td data-label="PPL Tr++ 340M">24.37</td>
+                <td data-label="PPL Tr++ 1B">19.40</td>
+                <td data-label="PPL GDN 340M">23.65</td>
+                <td data-label="PPL GDN 1B">20.26</td>
+                <td data-label="PPL Delta 340M">26.80</td>
+                <td data-label="PPL Delta 1B">21.06</td>
+                <td data-label="PPL GLA 340M">28.60</td>
+                <td data-label="PPL GLA 1B">22.23</td>
+                <td data-label="CS Avg Tr++ 340M">53.35</td>
+                <td data-label="CS Avg Tr++ 1B">57.12</td>
+                <td data-label="CS Avg GDN 340M">54.45</td>
+                <td data-label="CS Avg GDN 1B">57.30</td>
+                <td data-label="CS Avg Delta 340M">53.25</td>
+                <td data-label="CS Avg Delta 1B">57.32</td>
+                <td data-label="CS Avg GLA 340M">50.72</td>
+                <td data-label="CS Avg GLA 1B">55.79</td>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">Muon</th>
-                <td data-label="Transformer++ 340M">25.05</td>
-                <td data-label="Transformer++ 1B">19.86</td>
-                <td data-label="Gated DeltaNet 340M">24.34</td>
-                <td data-label="Gated DeltaNet 1B">20.32</td>
-                <td data-label="DeltaNet 340M">27.18</td>
-                <td data-label="DeltaNet 1B">21.18</td>
-                <td data-label="GLA 340M">27.47</td>
-                <td data-label="GLA 1B">21.54</td>
-                <td data-label="Mean rank">5.25</td>
-                <td data-label="Rank range">[2-8]</td>
+                <td data-label="PPL Tr++ 340M">25.05</td>
+                <td data-label="PPL Tr++ 1B">19.86</td>
+                <td data-label="PPL GDN 340M">24.34</td>
+                <td data-label="PPL GDN 1B">20.32</td>
+                <td data-label="PPL Delta 340M">27.18</td>
+                <td data-label="PPL Delta 1B">21.18</td>
+                <td data-label="PPL GLA 340M">27.47</td>
+                <td data-label="PPL GLA 1B">21.54</td>
+                <td data-label="CS Avg Tr++ 340M">53.25</td>
+                <td data-label="CS Avg Tr++ 1B">56.36</td>
+                <td data-label="CS Avg GDN 340M">54.45</td>
+                <td data-label="CS Avg GDN 1B">57.20</td>
+                <td data-label="CS Avg Delta 340M">52.00</td>
+                <td data-label="CS Avg Delta 1B">56.65</td>
+                <td data-label="CS Avg GLA 340M">52.50</td>
+                <td data-label="CS Avg GLA 1B">56.85</td>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">MARS-Shampoo</th>
-                <td data-label="Transformer++ 340M">26.43</td>
-                <td data-label="Transformer++ 1B">19.74</td>
-                <td data-label="Gated DeltaNet 340M">25.99</td>
-                <td data-label="Gated DeltaNet 1B">24.87</td>
-                <td data-label="DeltaNet 340M">28.26</td>
-                <td data-label="DeltaNet 1B">21.25</td>
-                <td data-label="GLA 340M">29.20</td>
-                <td data-label="GLA 1B">21.53</td>
-                <td data-label="Mean rank">8.25</td>
-                <td data-label="Rank range">[2-11]</td>
+                <td data-label="PPL Tr++ 340M">26.43</td>
+                <td data-label="PPL Tr++ 1B">19.74</td>
+                <td data-label="PPL GDN 340M">25.99</td>
+                <td data-label="PPL GDN 1B">24.87</td>
+                <td data-label="PPL Delta 340M">28.26</td>
+                <td data-label="PPL Delta 1B">21.25</td>
+                <td data-label="PPL GLA 340M">29.20</td>
+                <td data-label="PPL GLA 1B">21.53</td>
+                <td data-label="CS Avg Tr++ 340M">51.96</td>
+                <td data-label="CS Avg Tr++ 1B">57.30</td>
+                <td data-label="CS Avg GDN 340M">53.37</td>
+                <td data-label="CS Avg GDN 1B">57.58</td>
+                <td data-label="CS Avg Delta 340M">51.43</td>
+                <td data-label="CS Avg Delta 1B">56.74</td>
+                <td data-label="CS Avg GLA 340M">52.01</td>
+                <td data-label="CS Avg GLA 1B">57.33</td>
               </tr>
               <tr class="group-row">
-                <th scope="rowgroup" colspan="11">T3: Discretized Directions</th>
+                <th scope="rowgroup" colspan="17">T3: Discretized Directions</th>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">Lion</th>
-                <td data-label="Transformer++ 340M">26.02</td>
-                <td data-label="Transformer++ 1B">20.26</td>
-                <td data-label="Gated DeltaNet 340M">24.76</td>
-                <td data-label="Gated DeltaNet 1B">20.38</td>
-                <td data-label="DeltaNet 340M">28.20</td>
-                <td data-label="DeltaNet 1B">21.44</td>
-                <td data-label="GLA 340M">29.47</td>
-                <td data-label="GLA 1B">22.40</td>
-                <td data-label="Mean rank">8.25</td>
-                <td data-label="Rank range">[7-10]</td>
+                <td data-label="PPL Tr++ 340M">26.02</td>
+                <td data-label="PPL Tr++ 1B">20.26</td>
+                <td data-label="PPL GDN 340M">24.76</td>
+                <td data-label="PPL GDN 1B">20.38</td>
+                <td data-label="PPL Delta 340M">28.20</td>
+                <td data-label="PPL Delta 1B">21.44</td>
+                <td data-label="PPL GLA 340M">29.47</td>
+                <td data-label="PPL GLA 1B">22.40</td>
+                <td data-label="CS Avg Tr++ 340M">51.07</td>
+                <td data-label="CS Avg Tr++ 1B">55.22</td>
+                <td data-label="CS Avg GDN 340M">53.24</td>
+                <td data-label="CS Avg GDN 1B">55.74</td>
+                <td data-label="CS Avg Delta 340M">49.96</td>
+                <td data-label="CS Avg Delta 1B">54.22</td>
+                <td data-label="CS Avg GLA 340M">50.14</td>
+                <td data-label="CS Avg GLA 1B">53.96</td>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">MARS-Lion</th>
-                <td data-label="Transformer++ 340M">26.20</td>
-                <td data-label="Transformer++ 1B">21.17</td>
-                <td data-label="Gated DeltaNet 340M">25.24</td>
-                <td data-label="Gated DeltaNet 1B">22.20</td>
-                <td data-label="DeltaNet 340M">28.25</td>
-                <td data-label="DeltaNet 1B">22.72</td>
-                <td data-label="GLA 340M">29.67</td>
-                <td data-label="GLA 1B">23.79</td>
-                <td data-label="Mean rank">10.00</td>
-                <td data-label="Rank range">[9-11]</td>
+                <td data-label="PPL Tr++ 340M">26.20</td>
+                <td data-label="PPL Tr++ 1B">21.17</td>
+                <td data-label="PPL GDN 340M">25.24</td>
+                <td data-label="PPL GDN 1B">22.20</td>
+                <td data-label="PPL Delta 340M">28.25</td>
+                <td data-label="PPL Delta 1B">22.72</td>
+                <td data-label="PPL GLA 340M">29.67</td>
+                <td data-label="PPL GLA 1B">23.79</td>
+                <td data-label="CS Avg Tr++ 340M">51.61</td>
+                <td data-label="CS Avg Tr++ 1B">54.51</td>
+                <td data-label="CS Avg GDN 340M">52.96</td>
+                <td data-label="CS Avg GDN 1B">55.50</td>
+                <td data-label="CS Avg Delta 340M">50.94</td>
+                <td data-label="CS Avg Delta 1B">53.65</td>
+                <td data-label="CS Avg GLA 340M">50.69</td>
+                <td data-label="CS Avg GLA 1B">53.91</td>
               </tr>
               <tr class="group-row">
-                <th scope="rowgroup" colspan="11">T4: State-Compressed</th>
+                <th scope="rowgroup" colspan="17">T4: State-Compressed</th>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">Conda</th>
-                <td data-label="Transformer++ 340M">28.30</td>
-                <td data-label="Transformer++ 1B">19.86</td>
-                <td data-label="Gated DeltaNet 340M">26.11</td>
-                <td data-label="Gated DeltaNet 1B">21.07</td>
-                <td data-label="DeltaNet 340M">29.09</td>
-                <td data-label="DeltaNet 1B">21.75</td>
-                <td data-label="GLA 340M">37.38</td>
-                <td data-label="GLA 1B">22.89</td>
-                <td data-label="Mean rank">10.25</td>
-                <td data-label="Rank range">[9-11]</td>
+                <td data-label="PPL Tr++ 340M">28.30</td>
+                <td data-label="PPL Tr++ 1B">19.86</td>
+                <td data-label="PPL GDN 340M">26.11</td>
+                <td data-label="PPL GDN 1B">21.07</td>
+                <td data-label="PPL Delta 340M">29.09</td>
+                <td data-label="PPL Delta 1B">21.75</td>
+                <td data-label="PPL GLA 340M">37.38</td>
+                <td data-label="PPL GLA 1B">22.89</td>
+                <td data-label="CS Avg Tr++ 340M">51.61</td>
+                <td data-label="CS Avg Tr++ 1B">57.24</td>
+                <td data-label="CS Avg GDN 340M">53.45</td>
+                <td data-label="CS Avg GDN 1B">57.18</td>
+                <td data-label="CS Avg Delta 340M">51.46</td>
+                <td data-label="CS Avg Delta 1B">56.10</td>
+                <td data-label="CS Avg GLA 340M">48.28</td>
+                <td data-label="CS Avg GLA 1B">54.95</td>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">APOLLO</th>
-                <td data-label="Transformer++ 340M">34.08</td>
-                <td data-label="Transformer++ 1B">25.29</td>
-                <td data-label="Gated DeltaNet 340M">30.36</td>
-                <td data-label="Gated DeltaNet 1B">29.29</td>
-                <td data-label="DeltaNet 340M">34.73</td>
-                <td data-label="DeltaNet 1B">25.58</td>
-                <td data-label="GLA 340M">37.75</td>
-                <td data-label="GLA 1B">27.78</td>
-                <td data-label="Mean rank">12.00</td>
-                <td data-label="Rank range">[12-12]</td>
+                <td data-label="PPL Tr++ 340M">34.08</td>
+                <td data-label="PPL Tr++ 1B">25.29</td>
+                <td data-label="PPL GDN 340M">30.36</td>
+                <td data-label="PPL GDN 1B">29.29</td>
+                <td data-label="PPL Delta 340M">34.73</td>
+                <td data-label="PPL Delta 1B">25.58</td>
+                <td data-label="PPL GLA 340M">37.75</td>
+                <td data-label="PPL GLA 1B">27.78</td>
+                <td data-label="CS Avg Tr++ 340M">48.19</td>
+                <td data-label="CS Avg Tr++ 1B">53.61</td>
+                <td data-label="CS Avg GDN 340M">50.92</td>
+                <td data-label="CS Avg GDN 1B">53.73</td>
+                <td data-label="CS Avg Delta 340M">49.04</td>
+                <td data-label="CS Avg Delta 1B">53.88</td>
+                <td data-label="CS Avg GLA 340M">48.38</td>
+                <td data-label="CS Avg GLA 1B">52.33</td>
               </tr>
               <tr class="group-row">
-                <th scope="rowgroup" colspan="11">T5: Curvature-Aware</th>
+                <th scope="rowgroup" colspan="17">T5: Curvature-Aware</th>
               </tr>
               <tr>
                 <th scope="row" data-label="Optimizer">AdamP</th>
-                <td data-label="Transformer++ 340M">24.68</td>
-                <td data-label="Transformer++ 1B">19.04</td>
-                <td data-label="Gated DeltaNet 340M">24.32</td>
-                <td data-label="Gated DeltaNet 1B">20.29</td>
-                <td data-label="DeltaNet 340M">26.77</td>
-                <td data-label="DeltaNet 1B">20.68</td>
-                <td data-label="GLA 340M">28.66</td>
-                <td data-label="GLA 1B">21.86</td>
-                <td data-label="Mean rank">4.00</td>
-                <td data-label="Rank range">[2-5]</td>
+                <td data-label="PPL Tr++ 340M">24.68</td>
+                <td data-label="PPL Tr++ 1B">19.04</td>
+                <td data-label="PPL GDN 340M">24.32</td>
+                <td data-label="PPL GDN 1B">20.29</td>
+                <td data-label="PPL Delta 340M">26.77</td>
+                <td data-label="PPL Delta 1B">20.68</td>
+                <td data-label="PPL GLA 340M">28.66</td>
+                <td data-label="PPL GLA 1B">21.86</td>
+                <td data-label="CS Avg Tr++ 340M">51.69</td>
+                <td data-label="CS Avg Tr++ 1B">56.82</td>
+                <td data-label="CS Avg GDN 340M">53.82</td>
+                <td data-label="CS Avg GDN 1B">57.07</td>
+                <td data-label="CS Avg Delta 340M">51.53</td>
+                <td data-label="CS Avg Delta 1B">56.73</td>
+                <td data-label="CS Avg GLA 340M">51.14</td>
+                <td data-label="CS Avg GLA 1B">55.31</td>
               </tr>
             </tbody>
           </table>
-          <p class="table-note">Full Stage-2 long-context cross-architecture table with all eight scenario values and
-            rank summaries.</p>
+          <p class="table-note">Full Stage-2 long-context cross-architecture table with WikiText PPL and downstream
+            commonsense-reasoning accuracy (CS Avg) across all eight scenarios.</p>
         </div>
       </div>
     </section>
@@ -2437,8 +2555,8 @@
         <div class="citation-code">
           <button class="copy-citation" type="button" aria-label="Copy BibTeX"><i data-lucide="copy"
               aria-hidden="true"></i></button>
-          <pre class="citation-box"><code id="citation-bibtex">@article{li2025scaling,
-  title = {{Scaling for Scaling: Taxonomy, Geometry, and Benchmarking of Modern Optimizers}},
+          <pre class="citation-box"><code id="citation-bibtex">@article{li2025omniopt,
+  title = {{OmniOpt: Taxonomy, Geometry, and Benchmarking of Modern Optimizers}},
   author = {Siyuan Li and Jiabao Pan and Yumou Liu and Zhuoli Ouyang and Xin Jin and Xinglong Xu and Jingxuan Wei and Shengye Pang and Jintao Chen and Xuanhe Zhou and Conghui He and Cheng Tan},
 	  year = {2025}
 	}</code></pre>
