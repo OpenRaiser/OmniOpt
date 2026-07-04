@@ -1430,9 +1430,9 @@
               <tr>
                 <th scope="row" data-label="Optimizer">MARS-AdamW</th>
                 <td data-label="Axis I: Domain">&#8477;<sup>d</sup></td>
-                <td data-label="Axis II: State estimator">c<sub>t</sub>,m<sub>t</sub>,v<sub>t</sub></td>
+                <td data-label="Axis II: State estimator">c<sub>t</sub>,m<sub>t</sub>,v<sub>t</sub>=EMA(c<sub>t</sub><sup>2</sup>)</td>
                 <td data-label="Axis III (LMO)">adaptive &#8467;<sub>&#8734;</sub> (VR)</td>
-                <td data-label="Axis III (Precondition)">H<sub>t</sub>=diag(v<sub>t</sub>), v<sub>t</sub>=EMA(c<sub>t</sub><sup>2</sup>)</td>
+                <td data-label="Axis III (Precondition)">H<sub>t</sub>=diag(v<sub>t</sub>)</td>
                 <td data-label="Axis IV: Finalization">LR + decoupled WD</td>
               </tr>
               <tr>
