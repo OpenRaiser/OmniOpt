@@ -141,8 +141,9 @@ Cosine LR schedule, linear warmup (10% of steps), weight decay 0.0, gradient cli
 ## Citation
 
 ```bibtex
-@article{scaling-for-scaling,
-  title  = {Scaling for Scaling: A Benchmark of Optimizers for LLM Pre-training},
-  year   = {2026},
+@article{li2025omniopt,
+  title  = {{OmniOpt: Taxonomy, Geometry, and Benchmarking of Modern Optimizers}},
+  author = {Siyuan Li and Jiabao Pan and Yumou Liu and Zhuoli Ouyang and Xin Jin and Xinglong Xu and Jingxuan Wei and Shengye Pang and Jintao Chen and Xuanhe Zhou and Conghui He and Cheng Tan},
+  year   = {2025},
 }
 ```
